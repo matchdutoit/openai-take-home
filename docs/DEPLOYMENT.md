@@ -22,11 +22,13 @@ For ChatGPT integration, deploy `retail_mcp` as a Render **Web Service**.
    - Dockerfile path: `services/retail_mcp/Dockerfile`
    - Service name: `retail-mcp`
    - Region: same region as `retailcore`
+   - Render note: for Docker services, the UI may not show a separate Port field.
 
 ## 3) Environment Variables
 
 Set these in Render:
 
+- `PORT=8081` (Render-routing port)
 - `RETAILCORE_BASE_URL`
   - Example private URL: `http://retailcore:8080`
   - Example public URL: `https://retailcore.onrender.com`
@@ -34,7 +36,7 @@ Set these in Render:
 - `RETAIL_MCP_DOCS_DIR=/app/docs/knowledge`
 - `FASTMCP_TRANSPORT=http`
 - `FASTMCP_HOST=0.0.0.0`
-- `FASTMCP_PORT=8081`
+- `FASTMCP_PORT=8081` (optional if `PORT` is already set)
 - `FASTMCP_PATH=/mcp`
 
 ## 4) Health Check Endpoint

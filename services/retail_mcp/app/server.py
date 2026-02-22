@@ -106,7 +106,7 @@ mcp = build_server()
 def main() -> None:
     transport = os.getenv("FASTMCP_TRANSPORT", "http")
     host = os.getenv("FASTMCP_HOST", "0.0.0.0")
-    port = int(os.getenv("FASTMCP_PORT", "8081"))
+    port = int(os.getenv("FASTMCP_PORT", os.getenv("PORT", "8081")))
     path = os.getenv("FASTMCP_PATH", "/mcp")
 
     if transport == "http":
