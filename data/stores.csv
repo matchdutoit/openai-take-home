@@ -1,0 +1,9 @@
+store_id,store_name,city,state,region,latitude,longitude
+ST001,SoHo Flagship,New York,NY,Northeast,40.7233,-74.0030
+ST002,Chelsea Market,New York,NY,Northeast,40.7422,-74.0060
+ST003,Brooklyn Heights,Brooklyn,NY,Northeast,40.6959,-73.9952
+ST004,Upper East Side,New York,NY,Northeast,40.7736,-73.9566
+ST005,Jersey City Newport,Jersey City,NJ,Northeast,40.7269,-74.0324
+ST006,Queens Astoria,Queens,NY,Northeast,40.7644,-73.9235
+ST007,Boston Back Bay,Boston,MA,Northeast,42.3503,-71.0810
+ST008,Philadelphia Center City,Philadelphia,PA,Mid-Atlantic,39.9526,-75.1652

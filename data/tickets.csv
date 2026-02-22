@@ -1,0 +1,61 @@
+ticket_id,opened_date,store_id,category,summary,severity,status,channel
+TCKT0001,2026-02-19,ST004,POS Sync Failure,Register sync timeout at lane 6,high,open,email
+TCKT0002,2026-02-17,ST008,POS Sync Failure,Register sync timeout at lane 6,high,open,store_portal
+TCKT0003,2026-02-18,ST008,POS Sync Failure,Register sync timeout at lane 3,high,in_progress,store_portal
+TCKT0004,2026-02-16,ST001,POS Sync Failure,Register sync timeout at lane 3,high,open,store_portal
+TCKT0005,2026-02-04,ST003,POS Sync Failure,Register sync timeout at lane 6,high,resolved,email
+TCKT0006,2026-02-15,ST001,POS Sync Failure,Register sync timeout at lane 3,high,resolved,email
+TCKT0007,2026-02-15,ST001,POS Sync Failure,Register sync timeout at lane 7,high,resolved,store_portal
+TCKT0008,2026-02-04,ST005,POS Sync Failure,Register sync timeout at lane 6,high,open,email
+TCKT0009,2026-02-05,ST005,POS Sync Failure,Register sync timeout at lane 2,high,resolved,chat
+TCKT0010,2026-02-06,ST002,POS Sync Failure,Register sync timeout at lane 5,high,in_progress,chat
+TCKT0011,2026-02-08,ST006,POS Sync Failure,Register sync timeout at lane 3,high,resolved,email
+TCKT0012,2026-02-21,ST005,POS Sync Failure,Register sync timeout at lane 6,high,in_progress,email
+TCKT0013,2026-02-11,ST003,POS Sync Failure,Register sync timeout at lane 8,high,resolved,chat
+TCKT0014,2026-02-14,ST005,POS Sync Failure,Register sync timeout at lane 2,high,resolved,chat
+TCKT0015,2026-02-19,ST001,POS Sync Failure,Register sync timeout at lane 7,high,open,email
+TCKT0016,2026-02-14,ST002,POS Sync Failure,Register sync timeout at lane 1,high,resolved,chat
+TCKT0017,2026-02-05,ST003,POS Sync Failure,Register sync timeout at lane 9,high,resolved,email
+TCKT0018,2026-02-14,ST006,POS Sync Failure,Register sync timeout at lane 4,high,resolved,store_portal
+TCKT0019,2026-02-08,ST006,Price Label Mismatch,Shelf label mismatch on aisle 2,medium,in_progress,store_portal
+TCKT0020,2026-02-02,ST006,Price Label Mismatch,Shelf label mismatch on aisle 2,medium,open,chat
+TCKT0021,2026-02-10,ST005,Price Label Mismatch,Shelf label mismatch on aisle 3,medium,in_progress,email
+TCKT0022,2026-02-22,ST005,Price Label Mismatch,Shelf label mismatch on aisle 8,medium,resolved,email
+TCKT0023,2026-02-22,ST007,Price Label Mismatch,Shelf label mismatch on aisle 9,medium,in_progress,store_portal
+TCKT0024,2026-02-21,ST004,Price Label Mismatch,Shelf label mismatch on aisle 8,medium,resolved,email
+TCKT0025,2026-02-19,ST007,Price Label Mismatch,Shelf label mismatch on aisle 5,medium,in_progress,email
+TCKT0026,2026-02-11,ST008,Price Label Mismatch,Shelf label mismatch on aisle 9,medium,in_progress,email
+TCKT0027,2026-02-04,ST003,Price Label Mismatch,Shelf label mismatch on aisle 4,medium,open,email
+TCKT0028,2026-02-12,ST006,Price Label Mismatch,Shelf label mismatch on aisle 6,medium,open,email
+TCKT0029,2026-02-07,ST002,Price Label Mismatch,Shelf label mismatch on aisle 3,medium,open,email
+TCKT0030,2026-02-08,ST008,Price Label Mismatch,Shelf label mismatch on aisle 5,medium,in_progress,store_portal
+TCKT0031,2026-02-03,ST007,Price Label Mismatch,Shelf label mismatch on aisle 5,medium,open,email
+TCKT0032,2026-02-09,ST004,Price Label Mismatch,Shelf label mismatch on aisle 4,medium,resolved,email
+TCKT0033,2026-02-20,ST006,Price Label Mismatch,Shelf label mismatch on aisle 1,medium,open,chat
+TCKT0034,2026-02-08,ST007,Price Label Mismatch,Shelf label mismatch on aisle 4,medium,resolved,chat
+TCKT0035,2026-02-15,ST006,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 2 minutes,medium,open,email
+TCKT0036,2026-02-22,ST007,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 3 minutes,medium,open,store_portal
+TCKT0037,2026-02-22,ST006,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 6 minutes,medium,open,email
+TCKT0038,2026-02-20,ST002,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 6 minutes,medium,resolved,email
+TCKT0039,2026-02-19,ST004,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 2 minutes,medium,in_progress,email
+TCKT0040,2026-02-15,ST006,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 4 minutes,medium,open,email
+TCKT0041,2026-02-11,ST004,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 8 minutes,medium,open,store_portal
+TCKT0042,2026-02-06,ST008,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 7 minutes,medium,resolved,chat
+TCKT0043,2026-02-19,ST005,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 1 minutes,medium,resolved,email
+TCKT0044,2026-02-11,ST002,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 5 minutes,medium,resolved,email
+TCKT0045,2026-02-09,ST008,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 7 minutes,medium,open,email
+TCKT0046,2026-02-19,ST007,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 3 minutes,medium,open,chat
+TCKT0047,2026-02-03,ST003,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 9 minutes,medium,open,email
+TCKT0048,2026-02-18,ST008,BOPIS Pickup Delay,Pickup handoff exceeded SLA by 6 minutes,medium,resolved,store_portal
+TCKT0049,2026-02-07,ST006,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 5,low,in_progress,chat
+TCKT0050,2026-02-21,ST002,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 6,low,resolved,chat
+TCKT0051,2026-02-02,ST008,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 3,low,resolved,chat
+TCKT0052,2026-02-17,ST005,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 4,low,open,chat
+TCKT0053,2026-02-18,ST002,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 3,low,resolved,email
+TCKT0054,2026-02-14,ST006,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 3,low,resolved,email
+TCKT0055,2026-02-19,ST005,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 4,low,in_progress,chat
+TCKT0056,2026-02-05,ST004,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 9,low,in_progress,email
+TCKT0057,2026-02-15,ST007,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 9,low,open,store_portal
+TCKT0058,2026-02-05,ST003,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 9,low,open,store_portal
+TCKT0059,2026-02-04,ST001,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 9,low,resolved,store_portal
+TCKT0060,2026-02-03,ST001,Fitting Room QR Scanner,Fitting room QR scanner failed code parse at room 1,low,in_progress,email

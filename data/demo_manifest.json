@@ -1,0 +1,120 @@
+{
+  "anomalies": {
+    "hero_sku": {
+      "availability_distribution_on_hand": {
+        "ST001": 0,
+        "ST002": 4,
+        "ST003": 2,
+        "ST004": 1,
+        "ST005": 0,
+        "ST006": 0,
+        "ST007": 0,
+        "ST008": 0
+      },
+      "expected_nearby_stores_for_ST001": [
+        {
+          "distance_miles": 1.6,
+          "on_hand": 4,
+          "store_id": "ST002",
+          "store_name": "Chelsea Market"
+        },
+        {
+          "distance_miles": 3.1,
+          "on_hand": 2,
+          "store_id": "ST003",
+          "store_name": "Brooklyn Heights"
+        },
+        {
+          "distance_miles": 2.4,
+          "on_hand": 1,
+          "store_id": "ST004",
+          "store_name": "Upper East Side"
+        }
+      ],
+      "product_name": "Aster Linen Blazer",
+      "style_id": "AST-LIN-BLZ",
+      "target_sku": "AST-LIN-BLZ-SND-M"
+    },
+    "high_demand_low_inventory_skus": [
+      {
+        "average_daily_units_sold": 61.71,
+        "network_on_hand_units": 13,
+        "sku": "ECL-RUN-SNK-WHT-08"
+      },
+      {
+        "average_daily_units_sold": 62.07,
+        "network_on_hand_units": 8,
+        "sku": "NVA-UTL-TOT-CML-OS"
+      },
+      {
+        "average_daily_units_sold": 58.89,
+        "network_on_hand_units": 9,
+        "sku": "LUN-WRP-DRS-COR-M"
+      },
+      {
+        "average_daily_units_sold": 59.14,
+        "network_on_hand_units": 10,
+        "sku": "ORI-SLM-JEA-IND-30"
+      },
+      {
+        "average_daily_units_sold": 58.68,
+        "network_on_hand_units": 11,
+        "sku": "HBR-LTH-SND-TAN-09"
+      }
+    ],
+    "support_ticket_clusters": {
+      "expected_category_counts": {
+        "BOPIS Pickup Delay": 14,
+        "Fitting Room QR Scanner": 12,
+        "POS Sync Failure": 18,
+        "Price Label Mismatch": 16
+      },
+      "observed_category_counts": {
+        "BOPIS Pickup Delay": 14,
+        "Fitting Room QR Scanner": 12,
+        "POS Sync Failure": 18,
+        "Price Label Mismatch": 16
+      }
+    }
+  },
+  "base_date": "2026-02-22",
+  "expected_ground_truth": {
+    "associate_inventory_lookup": {
+      "expected_result_summary": "No on-hand units at ST001; nearby stock exists at ST002, ST004, and ST003.",
+      "query_sku": "AST-LIN-BLZ-SND-M",
+      "query_store_id": "ST001"
+    },
+    "merch_analysis_focus": {
+      "stockout_risk_skus": [
+        "ECL-RUN-SNK-WHT-08",
+        "NVA-UTL-TOT-CML-OS",
+        "LUN-WRP-DRS-COR-M",
+        "ORI-SLM-JEA-IND-30",
+        "HBR-LTH-SND-TAN-09"
+      ],
+      "transfer_candidate_example": {
+        "recommended_destination_store": "ST001",
+        "sku": "ECL-RUN-SNK-WHT-08"
+      }
+    },
+    "support_cluster_focus": {
+      "expected_ticket_total": 60,
+      "top_categories": [
+        "POS Sync Failure",
+        "Price Label Mismatch",
+        "BOPIS Pickup Delay",
+        "Fitting Room QR Scanner"
+      ]
+    }
+  },
+  "files": [
+    "data/stores.csv",
+    "data/products.csv",
+    "data/inventory.csv",
+    "data/sales_daily.csv",
+    "data/tickets.csv",
+    "data/customers.csv"
+  ],
+  "generated_for": "RetailNext internal productivity demo",
+  "seed": 20260417
+}

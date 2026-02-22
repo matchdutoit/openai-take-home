@@ -1,0 +1,32 @@
+services:
+  retailcore:
+    build:
+      context: .
+      dockerfile: services/retailcore/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      RETAILCORE_DATA_DIR: /app/data
+      RETAILCORE_DB_PATH: /app/services/retailcore/retailcore.db
+    volumes:
+      - ./data:/app/data:ro
+
+  retail_mcp:
+    build:
+      context: .
+      dockerfile: services/retail_mcp/Dockerfile
+    depends_on:
+      - retailcore
+    ports:
+      - "8081:8081"
+    environment:
+      RETAIL_MCP_DATA_DIR: /app/data
+      RETAIL_MCP_DOCS_DIR: /app/docs/knowledge
+      RETAILCORE_BASE_URL: http://retailcore:8080
+      FASTMCP_TRANSPORT: http
+      FASTMCP_HOST: 0.0.0.0
+      FASTMCP_PORT: "8081"
+      FASTMCP_PATH: /mcp
+    volumes:
+      - ./data:/app/data:ro
+      - ./docs/knowledge:/app/docs/knowledge:ro
