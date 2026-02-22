@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import os
-from typing import Any
+from typing import Any, Optional
 
 from fastmcp import FastMCP
 from fastmcp.server.dependencies import get_http_headers
@@ -16,18 +16,27 @@ from services.retail_mcp.app.logic import (
     reserve_item_action,
     search_documents,
 )
+from services.retail_mcp.app.roles import resolve_role
 
 
-def _role_from_headers() -> str:
-    headers = get_http_headers()
-    role = None
+def _role_from_headers() -> Optional[str]:
+    try:
+        headers = get_http_headers()
+    except Exception:
+        return None
+
     for key, value in headers.items():
         if key.lower() == "x-demo-role":
-            role = value
-            break
-    if role is None:
-        raise ValueError("Missing X-DEMO-ROLE header. Expected associate|merch|support.")
-    return role
+            return value
+    return None
+
+
+def _resolve_role(role_arg: Optional[str], default_role: str) -> str:
+    return resolve_role(
+        role_arg=role_arg,
+        default_role=default_role,
+        header_role=_role_from_headers(),
+    )
 
 
 def build_server() -> FastMCP:
@@ -48,24 +57,35 @@ def build_server() -> FastMCP:
         return fetch_document(section_id=id)
 
     @mcp.tool
-    def inventory_lookup(sku: str, store_id: str, radius_miles: float = 25.0) -> dict[str, Any]:
+    def inventory_lookup(
+        sku: str,
+        store_id: str,
+        radius_miles: float = 25.0,
+        role: Optional[str] = None,
+    ) -> dict[str, Any]:
         """Lookup inventory availability across nearby stores."""
         return inventory_lookup_action(
             sku=sku,
             store_id=store_id,
             radius_miles=radius_miles,
-            role=_role_from_headers(),
+            role=_resolve_role(role, default_role="associate"),
         )
 
     @mcp.tool
-    def reserve_item(sku: str, store_id: str, qty: int, confirm: bool = False) -> dict[str, Any]:
+    def reserve_item(
+        sku: str,
+        store_id: str,
+        qty: int,
+        confirm: bool = False,
+        role: Optional[str] = None,
+    ) -> dict[str, Any]:
         """Create preview/confirmed reserve action in RetailCore."""
         return reserve_item_action(
             sku=sku,
             store_id=store_id,
             qty=qty,
             confirm=confirm,
-            role=_role_from_headers(),
+            role=_resolve_role(role, default_role="associate"),
         )
 
     @mcp.tool
@@ -75,6 +95,7 @@ def build_server() -> FastMCP:
         sku: str,
         qty: int,
         confirm: bool = False,
+        role: Optional[str] = None,
     ) -> dict[str, Any]:
         """Create preview/confirmed transfer action in RetailCore."""
         return create_transfer_action(
@@ -83,18 +104,24 @@ def build_server() -> FastMCP:
             sku=sku,
             qty=qty,
             confirm=confirm,
-            role=_role_from_headers(),
+            role=_resolve_role(role, default_role="merch"),
         )
 
     @mcp.tool
-    def create_ticket(store_id: str, category: str, severity: str, description: str) -> dict[str, Any]:
+    def create_ticket(
+        store_id: str,
+        category: str,
+        severity: str,
+        description: str,
+        role: Optional[str] = None,
+    ) -> dict[str, Any]:
         """Create a support ticket in RetailCore."""
         return create_ticket_action(
             store_id=store_id,
             category=category,
             severity=severity,
             description=description,
-            role=_role_from_headers(),
+            role=_resolve_role(role, default_role="support"),
         )
 
     return mcp

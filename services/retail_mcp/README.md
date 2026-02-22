@@ -25,7 +25,8 @@ Services:
 - RetailCore API: `http://localhost:8080`
 - RetailOps MCP (HTTP transport): `http://localhost:8081/mcp`
 
-For ACTION tools, include `X-DEMO-ROLE: associate|merch|support` on MCP requests so role is propagated to RetailCore.
+For ACTION tools, include `X-DEMO-ROLE: associate|merch|support` when your MCP client supports headers.
+If headers are not supported (for example some hosted ChatGPT flows), pass `role` directly in the action tool arguments.
 
 ## Golden Path Script
 
